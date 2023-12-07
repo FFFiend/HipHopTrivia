@@ -36,9 +36,17 @@ const UserModel = {
     high_score: {
         type: DataTypes.INTEGER,
     },
-    
+
     favorite_artist: {
         type: DataTypes.STRING
+    },
+
+    total_answered: {
+        type: DataTypes.INTEGER
+    },
+
+    total_correct: {
+        type: DataTypes.INTEGER
     }
 }
 
