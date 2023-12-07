@@ -1,0 +1,25 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "\"based\"",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FFFiend/HipHopTrivia.git"
+  },
+  "author": "Owais Zahid",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FFFiend/HipHopTrivia/issues"
+  },
+  "homepage": "https://github.com/FFFiend/HipHopTrivia#readme",
+  "dependencies": {
+    "ajv": "^8.12.0",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "sequelize": "^6.35.1"
+  }
+}
