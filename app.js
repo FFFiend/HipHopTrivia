@@ -2,7 +2,7 @@ const PORT = process.env.PORT || 8000;
 const express = require("express");
 const app = express();
 
-//app.use(express.json());
+app.use(express.json());
 
 
 app.set('view engine','ejs')
@@ -38,4 +38,8 @@ app.get('/profile', (req, res)=>{
 app.delete('/del', (req, res)=>{
     res.send('Delete method')
 });
+
+app.put("/createuser/:",(req, res)=>{
+    res.body.name;
+})
 
