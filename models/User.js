@@ -1,61 +1,17 @@
-const { DataTypes } = require("sequelize");
+// wont use sequelize 
 
-const UserModel = {
-    id: {
-        type: DataTypes.INTEGER,
-        autoIncrement: true,
-        primaryKey: true,
-    },
-    username: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        unique: true,
-        validate: {
-            len: [6,20],
-            msg: "Your username should be at least 6 chars long."
-        }
-    },
-    email: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        unique: true,
-        validate: {
-            isEmail: true,
-            msg: "This is not a valid email, please try again."
-        }
-    },
-    password: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-            len: [5,Infinity],
-            msg: "Your password must be at least 5 chars long."
-        }
+const { default: mongoose } = require("mongoose")
 
-    },
-    high_score: {
-        type: DataTypes.INTEGER,
-    },
+mongoose_instance = require("mongoose")
 
-    favorite_artist: {
-        type: DataTypes.STRING
-    },
+mongoose.connect("mongodb://127.0.0.1:27017")
 
-    total_answered: {
-        type: DataTypes.INTEGER
-    },
+const user_model = mongoose.Schema({
+    username: String,
+    name: String,
+    password: String,
+    email: String,
+    age: String,
+})
 
-    total_correct: {
-        type: DataTypes.INTEGER
-    }
-}
-
-module.exports = {
-    initialze: (sequelize) => {
-        this.model = sequelize.define("User", UserModel);
-    },
-
-    createUser: (user) => {
-        return this.model.create(user);
-    }
-}
+module.exports = mongoose.model("User", user_model)
