@@ -2,5 +2,4 @@
 I hope I finish this in time
 
 
-
-# Using sequelize too... cool
+Update: not using sequelize anymore, sticking to MongoDB
